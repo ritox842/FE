@@ -6,7 +6,6 @@ import _keyBy from 'lodash.keyby';
 import _reject from 'lodash.reject';
 import _groupBy from 'lodash.groupby';
 import _filter from 'lodash.filter';
-import _size from 'lodash.size';
 import { toBoolean } from '../coercion';
 import {isObject} from '../validators';
 

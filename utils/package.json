@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0",
+    "lodash.curry": "4.1.1",
     "lodash.debounce": "^4.0.8",
     "lodash.difference": "^4.5.0",
     "lodash.eq": "^4.0.0",
