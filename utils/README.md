@@ -38,7 +38,6 @@
 - merge
 - diff
 - cloneDeep
-- keysLength
 
 #### String
 - escape
