@@ -100,3 +100,13 @@ function changes(object, base) {
 export function cloneDeep(objects) {
   return _cloneDeep(objects);
 }
+
+
+/**
+ *
+ * @param object
+ * @returns {number}
+ */
+export function keysLength(object) {
+    return Object.keys(object).length;
+}
