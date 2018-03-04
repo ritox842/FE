@@ -27,6 +27,6 @@ export function debounce(func, wait?, options?) {
  * @param func
  * @param {number} arity
  */
-export function curry(func, [arity = func.length]) {
+export function curry(func, arity = func.length) {
     return _curry(func, arity)
 }
