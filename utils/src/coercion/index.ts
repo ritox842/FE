@@ -1,6 +1,6 @@
 /** Coerces a data-bound value (typically a string) to a boolean. */
-export function toBoolean(value: any): boolean {
-  return value != null && `${value}` !== 'false';
+export function toBoolean(value: any, includeZero: boolean = false): boolean {
+  return value != null && `${value}` !== 'false' && (includeZero && value !== 0 || !includeZero);
 }
 
 /**
