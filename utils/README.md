@@ -27,6 +27,7 @@
 #### Function
 - throttle
 - debounce
+- curry
 
 #### Object
 - get
@@ -43,6 +44,8 @@
 - unescape
 - escapeRegExp
 - capitalize
+- camelCase
+- kebabCase
 
 #### Validators
 - isFunction
