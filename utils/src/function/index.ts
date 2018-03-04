@@ -1,5 +1,6 @@
 import _debounce from 'lodash.debounce';
 import _throttle from 'lodash.throttle';
+import _curry from 'lodash.curry';
 
 /**
  *
@@ -8,7 +9,7 @@ import _throttle from 'lodash.throttle';
  * @param options
  */
 export function throttle(func, wait?, options?) {
-  return _throttle(func, wait, options)
+    return _throttle(func, wait, options)
 }
 
 /**
@@ -18,5 +19,14 @@ export function throttle(func, wait?, options?) {
  * @param options
  */
 export function debounce(func, wait?, options?) {
-  return _debounce(func, wait, options)
+    return _debounce(func, wait, options)
+}
+
+/**
+ *
+ * @param func
+ * @param {number} arity
+ */
+export function curry(func, [arity = func.length]) {
+    return _curry(func, arity)
 }
