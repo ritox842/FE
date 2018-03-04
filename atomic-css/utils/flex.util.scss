@@ -1,0 +1,24 @@
+/*
+  Use to generate flex props
+ */
+@mixin d-flex-x-y-z {
+  @for $g from 0 through 1 {
+    @for $s from 0 through 2 {
+      @if ($s > 0) {
+        .d-flex-#{$g}-#{$s - 1} {
+          flex: #{$g} #{$s - 1}
+        }
+        .d-flex-#{$g}-#{$s - 1}-100 {
+          flex: #{$g} #{$s - 1} 100%
+        }
+        .d-flex-#{$g}-#{$s - 1}-auto {
+          flex: #{$g} #{$s - 1} auto
+        }
+      } @else {
+        .d-flex-#{$g} {
+          flex: #{$g}
+        }
+      }
+    }
+  }
+}

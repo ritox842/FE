@@ -1,0 +1,48 @@
+/*
+  Use to generate bound properties, such as margin and padding.
+  @example: @include bound(p, padding, 0, 30)
+ */
+@mixin bound($char-prefix, $property, $start, $end) {
+  @for $index from $start through $end {
+    @include boundItem($char-prefix, $property, $index, px);
+  }
+
+  // add auto
+  @include boundItem($char-prefix, $property, auto, '');
+}
+
+@mixin boundItem($char-prefix, $property, $index, $unit) {
+  // all sides
+  .#{$char-prefix}-#{$index} {
+    #{$property}: #{$index}#{$unit};
+  }
+
+  // Y-sides
+  .#{$char-prefix}y-#{$index} {
+    #{$property}-top: #{$index}#{$unit};
+    #{$property}-bottom: #{$index}#{$unit};
+  }
+
+  // X-sides
+  .#{$char-prefix}x-#{$index} {
+    #{$property}-left: #{$index}#{$unit};
+    #{$property}-right: #{$index}#{$unit};
+  }
+
+  // top-side
+  .#{$char-prefix}t-#{$index} {
+    #{$property}-top: #{$index}#{$unit};
+  }
+  // right-side
+  .#{$char-prefix}r-#{$index} {
+    #{$property}-right: #{$index}#{$unit};
+  }
+  // bottom-side
+  .#{$char-prefix}b-#{$index} {
+    #{$property}-bottom: #{$index}#{$unit};
+  }
+  // left-side
+  .#{$char-prefix}l-#{$index} {
+    #{$property}-left: #{$index}#{$unit};
+  }
+}

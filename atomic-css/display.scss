@@ -1,0 +1,39 @@
+.block {
+  display: block;
+}
+
+.h\:block:hover {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.h\:inline-block:hover {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.h\:inline:hover {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.h\:hidden:hover {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
