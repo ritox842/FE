@@ -3,6 +3,7 @@ import _union from 'lodash.union';
 import _difference from 'lodash.difference';
 import _findIndex from 'lodash.findindex';
 import _minBy from 'lodash.minby';
+import _uniq from 'lodash.uniq';
 
 /**
  *
@@ -42,7 +43,11 @@ export function findIndex(array, predicate?, fromIndex?) {
   return _findIndex(array, predicate, fromIndex);
 }
 
-
+/**
+ *
+ * @param array
+ * @param iteratee
+ */
 export function minBy(array, iteratee) {
   return _minBy(array, iteratee);
 }
@@ -57,4 +62,12 @@ export function minBy(array, iteratee) {
  */
 export function last<T>(arr: T[]): T {
   return arr && arr.length ? arr[arr.length - 1] : undefined;
+}
+
+/**
+ *
+ * @param array
+ */
+export function uniq(array) {
+    return _uniq(array);
 }

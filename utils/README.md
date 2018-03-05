@@ -5,6 +5,7 @@
 - findIndex
 - minBy
 - last
+- uniq
 
 #### Coercion
 - toBoolean
