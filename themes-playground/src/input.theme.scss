@@ -1,0 +1,8 @@
+dato-input {
+  color: themify(primary-100);
+  background: linear-gradient(to right, themify(primary-100) , themify(accent-100));
+}
+
+dato-input a {
+  color: themify((dark: primary-100, light: accent-300));
+}
