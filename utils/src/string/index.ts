@@ -1,9 +1,6 @@
 import _escape from 'lodash.escape';
 import _unescape from 'lodash.unescape';
 import _escapeRegExp from 'lodash.escaperegexp';
-import _capitalize from 'lodash.capitalize';
-import _camelCase from 'lodash.camelcase';
-import _kebabcase from 'lodash.kebabcase';
 
 /**
  *
@@ -36,7 +33,7 @@ export function escapeRegExp(str) {
  * @returns {any}
  */
 export function capitalize(str) {
-  return _capitalize(str);
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
 /**
@@ -45,7 +42,14 @@ export function capitalize(str) {
  * @returns {string}
  */
 export function camelCase(str): string {
-  return _camelCase(str);
+  const camelCase = str => {
+    let string = str.toLowerCase().replace(/[^A-Za-z0-9]/g, ' ').split(' ')
+      .reduce((result, word) => result + capitalize(word.toLowerCase()))
+    return string.charAt(0).toLowerCase() + string.slice(1)
+  }
+
+  const capitalize = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
+  return camelCase(str);
 }
 
 /**
@@ -54,5 +58,5 @@ export function camelCase(str): string {
  * @returns {string}
  */
 export function kebabCase(str): string {
-  return _kebabcase(str);
+  return str.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase();
 }

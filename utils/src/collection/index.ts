@@ -6,7 +6,8 @@ import _keyBy from 'lodash.keyby';
 import _reject from 'lodash.reject';
 import _groupBy from 'lodash.groupby';
 import _filter from 'lodash.filter';
-import _size from 'lodash.size';
+import { toBoolean } from '../coercion';
+import {isObject} from '../validators';
 
 /**
  *
@@ -89,7 +90,15 @@ export function filter(collection, predicate?) {
  * @param collection
  */
 export function size(collection) {
-  return _size(collection);
+  if(Array.isArray(collection)) {
+    return collection.length;
+  }
+
+  if(isObject(collection)) {
+    return Object.keys(collection).length;
+  }
+
+  return toBoolean(collection) ? collection.length : 0;
 }
 
 /**
