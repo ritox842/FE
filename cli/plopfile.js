@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = function( plop ) {
 
-  const basePath = ".";
+  const basePath = process.cwd();
 
   plop.setPrompt('directory', promptDirectory);
 
