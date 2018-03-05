@@ -30,3 +30,14 @@ export function debounce(func, wait?, options?) {
 export function curry(func, arity = func.length) {
     return _curry(func, arity)
 }
+
+/**
+ *  Return a composed function
+ * @param funcs
+ * @returns {(value) => any}
+ */
+export function compose(...funcs) {
+    return (value) => {
+        return funcs.reduce((value, func) => func(value), value);
+    };
+}

@@ -29,6 +29,7 @@
 - throttle
 - debounce
 - curry
+- compose
 
 #### Object
 - get
