@@ -3,7 +3,6 @@ import _union from 'lodash.union';
 import _difference from 'lodash.difference';
 import _findIndex from 'lodash.findindex';
 import _minBy from 'lodash.minby';
-import _uniq from 'lodash.uniq';
 
 /**
  *
@@ -69,5 +68,5 @@ export function last<T>(arr: T[]): T {
  * @param array
  */
 export function uniq(array) {
-    return _uniq(array);
+    return Array.from(new Set(array));
 }
