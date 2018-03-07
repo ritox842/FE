@@ -153,6 +153,10 @@
 /* flex--a-b-c Selectors */
 @include d-flex-x-y-z;
 
+/* Flex item width reset (relevant to flex-basis: "auto") */
+.d-flex-item-width-reset {
+  min-width: 0;
+}
 
 /* Aligenment */
 .align-start-center {
