@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Dato{{pascalCase name}}Component } from './{{dashCase name}}.component';
 
+const declerations = [Dato{{pascalCase name}}Component];
+
 @NgModule({
   imports: [CommonModule],
-  declarations: [Dato{{pascalCase name}}Component],
-  exports: [Dato{{pascalCase name}}Component]
+  declarations: [declerations],
+  exports: [declerations]
 })
 export class Dato{{pascalCase name}}Module {
 
