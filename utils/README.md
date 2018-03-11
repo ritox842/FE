@@ -5,6 +5,7 @@
 - findIndex
 - minBy
 - last
+- uniq
 
 #### Coercion
 - toBoolean
@@ -28,6 +29,7 @@
 - throttle
 - debounce
 - curry
+- compose
 
 #### Object
 - get

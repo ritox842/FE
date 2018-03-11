@@ -1,13 +1,14 @@
 {
   "name": "@datorama/utils",
-  "version": "1.2.0",
+  "version": "1.6.0",
   "description": "Datorama utils",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "test": "jest",
     "build": "rm -rf ./dist && tsc",
-    "prepublish": "rm -rf ./dist && npm run build"
+    "prepublish": "rm -rf ./dist && npm run build",
+    "pub": "npm publish --access public"
   },
   "typings": "./dist/index.d.ts",
   "jest": {

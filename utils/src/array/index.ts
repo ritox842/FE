@@ -42,7 +42,11 @@ export function findIndex(array, predicate?, fromIndex?) {
   return _findIndex(array, predicate, fromIndex);
 }
 
-
+/**
+ *
+ * @param array
+ * @param iteratee
+ */
 export function minBy(array, iteratee) {
   return _minBy(array, iteratee);
 }
@@ -57,4 +61,12 @@ export function minBy(array, iteratee) {
  */
 export function last<T>(arr: T[]): T {
   return arr && arr.length ? arr[arr.length - 1] : undefined;
+}
+
+/**
+ *
+ * @param array
+ */
+export function uniq(array) {
+    return Array.from(new Set(array));
 }
