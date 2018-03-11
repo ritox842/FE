@@ -1,3 +1,3 @@
-dato-{{dashCase name}} {
+:host {
 
 }
