@@ -32,10 +32,6 @@ module.exports = function(plop) {
       type: 'confirm',
       name: 'grid',
       message: 'It\'s a Grid?'
-    }, {
-      type: 'confirm',
-      name: 'service',
-      message: 'Do you need a Service?'
     }).concat(chooseDirAction),
     actions: function(data) {
       const actions = [{
@@ -47,11 +43,6 @@ module.exports = function(plop) {
           type: 'add',
           path: buildPath("public_api.ts", data.directory, true),
           templateFile: './templates/core-component/public_api.tpl'
-        },
-        {
-          type: 'add',
-          path: buildPath("{{'dashCase' name}}.component.html", data.directory, true),
-          templateFile: './templates/core-component/componentView.tpl'
         },
         {
           type: 'add',
@@ -75,16 +66,8 @@ module.exports = function(plop) {
           type: 'add',
           path: buildPath("{{'dashCase' name}}.component.ts", data.directory, true),
           templateFile: './templates/core-component/grid.tpl'
-        })
-      } else {
-        actions.push({
-          type: 'add',
-          path: buildPath("{{'dashCase' name}}.component.ts", data.directory, true),
-          templateFile: './templates/core-component/component.tpl'
-        })
-      }
+        });
 
-      if (data.service) {
         actions.push({
           type: 'add',
           path: buildPath("./{{'dashCase' name}}.service.ts", data.directory, true),
@@ -96,7 +79,38 @@ module.exports = function(plop) {
           path: buildPath("./{{'dashCase' name}}-data.service.ts", data.directory, true),
           templateFile: './templates/store/data-service.tpl'
         });
+
+        actions.push({
+          type: 'add',
+          path: buildPath("./{{'dashCase' name}}.mocks.ts", data.directory, true),
+          templateFile: './templates/core-component/mocks.tpl'
+        });
+
+        actions.push({
+          type: 'add',
+          path: buildPath("./{{'dashCase' name}}.component.spec.ts", data.directory, true),
+          templateFile: './templates/core-component/spec.tpl'
+        });
+
+        actions.push({
+          type: 'add',
+          path: buildPath("{{'dashCase' name}}.component.html", data.directory, true),
+          templateFile: './templates/core-component/grid-html.tpl'
+        });
+
+      } else {
+        actions.push({
+          type: 'add',
+          path: buildPath("{{'dashCase' name}}.component.ts", data.directory, true),
+          templateFile: './templates/core-component/component.tpl'
+        });
+        actions.push({
+          type: 'add',
+          path: buildPath("{{'dashCase' name}}.component.html", data.directory, true),
+          templateFile: './templates/core-component/componentView.tpl'
+        });
       }
+
 
       return actions;
     }
