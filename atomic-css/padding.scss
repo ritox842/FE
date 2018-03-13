@@ -1,3 +1,7 @@
 @import './utils/bound.util';
 
 @include bound(p, padding, 0, 30);
+
+.no-padding {
+  padding: 0;
+}

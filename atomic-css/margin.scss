@@ -1,3 +1,7 @@
 @import './utils/bound.util';
 
 @include bound(m, margin, 0, 30);
+
+.no-margin {
+  margin: 0;
+}

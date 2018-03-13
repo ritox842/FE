@@ -1,0 +1,13 @@
+$heightStep: 25;
+
+$steps: floor(100 / $heightStep);
+
+@mixin height-x {
+  @for $i from 1 through $steps {
+    .height-#{$heightStep * $i} {
+      height: #{$heightStep * $i * 1%}
+    }
+  }
+}
+
+@include height-x;

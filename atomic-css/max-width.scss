@@ -1,0 +1,13 @@
+$maxWidthStep: 5;
+
+$steps: floor(100 / $maxWidthStep);
+
+@mixin max-width-x {
+  @for $i from 1 through $steps {
+    .max-width-#{$maxWidthStep * $i} {
+      max-width: #{$maxWidthStep * $i * 1%}
+    }
+  }
+}
+
+@include max-width-x;

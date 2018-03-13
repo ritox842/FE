@@ -1,11 +1,13 @@
-.opacity-0 {
-  opacity: 0;
+$opacityStep: 50;
+
+$steps: floor(100 / $opacityStep);
+
+@mixin opacity-x {
+  @for $i from 0 through $steps {
+    .opacity-#{$opacityStep * $i} {
+      opacity: #{$opacityStep * $i / 100}
+    }
+  }
 }
 
-.opacity-50 {
-  opacity: .5;
-}
-
-.opacity-100 {
-  opacity: 1;
-}
+@include opacity-x;

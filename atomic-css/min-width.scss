@@ -1,0 +1,17 @@
+.min-width-auto {
+  min-width: auto
+}
+
+$minWidthStep: 5;
+
+$steps: floor(100 / $minWidthStep);
+
+@mixin min-width-x {
+  @for $i from 1 through $steps {
+    .min-width-#{$minWidthStep * $i} {
+      min-width: #{$minWidthStep * $i * 1%}
+    }
+  }
+}
+
+@include min-width-x;
