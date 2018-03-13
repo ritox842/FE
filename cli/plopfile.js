@@ -127,7 +127,7 @@ module.exports = function(plop) {
           templateFile: './templates/component/public_api.tpl'
         })
       } else {
-        action.push({
+        actions.push({
           type: 'add',
           path: buildPath("./{{'dashCase' name}}.mocks.ts", data.directory, true),
           templateFile: './templates/component/mocks.tpl'

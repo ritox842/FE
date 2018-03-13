@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class {{ 'pascalCase' name}}DataService {
+export class TestDataService {
 
   constructor(private http: HttpClient) {
   }
