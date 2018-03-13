@@ -1,3 +1,0 @@
-<div>
-  {{titleCase name}}
-</div>

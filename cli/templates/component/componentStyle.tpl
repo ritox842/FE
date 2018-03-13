@@ -1,3 +1,0 @@
-da-{{dashCase name}} {
-
-}

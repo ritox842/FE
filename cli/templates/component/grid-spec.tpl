@@ -2,7 +2,7 @@ import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 import { {{pascalCase name}}Component } from "./{{dashCase name}}.component";
 import { {{pascalCase name}}DataService } from "./{{dashCase name}}-data.service";
 import { {{pascalCase name}}Service} from "./{{dashCase name}}.service";
-import {extendDefaultModule, getGridHeaderComponent, getGridHeaderComponentText} from "../../tests-utils";
+import {extendDefaultModule, getGridHeaderComponent, getGridHeaderComponentText} from "@datorama/tests/utils";
 import {dataServiceMock} from "./logged-users.mocks";
 import {DatoSnackbar} from "@datorama/core";
 import {ErrorObservable} from "rxjs/observable/ErrorObservable";

@@ -1,19 +1,19 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from "@angular/core";
 import {downgradeComponent} from "@angular/upgrade/static";
-import { loggedUsersService} from "@datorama/modules/admin/logged-users/logged-users.service";
-import {Example} from "@datorama/modules/admin/logged-users/logged-users.types";
+import { {{camelCase name}}Service} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.service";
+import {Example} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.types";
 import {DatoGrid, DatoSnackbar, GridColumns, RowSelectionType, ToolbarAction} from "@datorama/core";
 
 @Component({
-  selector: 'dato-logged-users',
-  templateUrl: './logged-users.component.html',
+  selector: 'da-{{dashCase name}}',
+  templateUrl: './{{dashCase name}}.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoggedUsersComponent extends DatoGrid<Example> implements OnInit {
+export class {{pascalCase name}}Component extends DatoGrid<Example> implements OnInit {
   /** Change data and Example to the appropriate name */
   data: Example[];
 
-  constructor(private loggedUsersService: LoggedUsersService,
+  constructor(private {{camelCase name}}Service: {{pascalCase name}}Service,
               private snackbar: DatoSnackbar,
               private cdr: ChangeDetectorRef) {
     super();
@@ -31,7 +31,7 @@ export class LoggedUsersComponent extends DatoGrid<Example> implements OnInit {
   actionOnClick() {
     const selectedData = this.getSelectedRow();
 
-    this.loggedUsersService.action(selectedData).subscribe(() => {
+    this.{{camelCase name}}Service.action(selectedData).subscribe(() => {
       this.removeRows(selectedData);
       this.snackbar.info('translate.string');
     }, (err) => {
@@ -61,7 +61,7 @@ export class LoggedUsersComponent extends DatoGrid<Example> implements OnInit {
     return [
       {
         field: 'id',
-        headerName: 'Account Id'
+        headerName: 'translate.value'
       }
     ];
   }
@@ -89,7 +89,7 @@ export class LoggedUsersComponent extends DatoGrid<Example> implements OnInit {
    * @returns {Subscription}
    */
   private fetchData() {
-    return this.loggedUsersService.getUsers().subscribe((data) => {
+    return this.{{camelCase name}}Service.getUsers().subscribe((data) => {
       this.data = data;
       this.cdr.detectChanges();
     });
@@ -99,6 +99,6 @@ export class LoggedUsersComponent extends DatoGrid<Example> implements OnInit {
 
 angular
   .module('app.components')
-  .directive('daLoggedUsers', downgradeComponent({
-    component: LoggedUsersComponent
+  .directive('da{{pascalCase name}}', downgradeComponent({
+    component: {{pascalCase name}}Component
   }) as angular.IDirectiveFactory);
