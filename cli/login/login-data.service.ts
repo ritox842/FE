@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class TestDataService {
+export class LoginDataService {
 
   constructor(private http: HttpClient) {
   }

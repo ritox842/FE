@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+{{#if platform}}
+import { {{pascalCase name}}Component } from './{{dashCase name}}.component';
+{{else}}
 import { Dato{{pascalCase name}}Component } from './{{dashCase name}}.component';
+{{/if}}
+
 
 {{#if platform}}
 const declerations = [{{pascalCase name}}Component];

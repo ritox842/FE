@@ -7,7 +7,9 @@ import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from "@angular/
   selector: 'dato-{{dashCase name}}',
  {{/if}}
   templateUrl: './{{dashCase name}}.component.html',
+  {{#if !platform}}
   styleUrls: ['./{{dashCase name}}.component.scss'],
+ {{/if}}
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 {{#if platform}}

@@ -1,25 +1,25 @@
 import {HttpClient} from "@angular/common/http";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {TestBed} from "@angular/core/testing";
-import {LoggedUsersDataService} from "./test-data.service";
-import {users} from "./test.mocks";
+import { LoginDataService} from "./login-data.service";
+import {users} from "./login.mocks";
 import {URI_CONSTANTS} from "@datorama/config/constants/uri.constants/constants/uri.constants";
 import {HTTP_REQUEST, mockUriUtil} from "@datorama/tests/utils";
 
-fdescribe('TestDataService', () => {
+fdescribe('LoginDataService', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
-  let testDataService: TestDataService;
+  let loginDataService: LoginDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TestDataService, mockUriUtil()],
+      providers: [LoginDataService, mockUriUtil()],
       imports: [HttpClientTestingModule]
     });
 
     httpClient = TestBed.get(HttpClient);
     httpTestingController = TestBed.get(HttpTestingController);
-    testDataService = TestBed.get(TestDataService);
+    loginDataService = TestBed.get(LoginDataService);
   });
 
   afterEach(() => {

@@ -106,7 +106,7 @@ module.exports = function(plop) {
       if (data.service) {
         actions.push({
           type: 'add',
-          path: buildPath("{{'dashCase' name}}-data.spec.ts", data.directory, true),
+          path: buildPath("{{'dashCase' name}}-data.service.spec.ts", data.directory, true),
           templateFile: './templates/component/data-service-spec.tpl'
         }, {
           type: 'add',
@@ -116,6 +116,10 @@ module.exports = function(plop) {
           type: 'add',
           path: buildPath("./{{'dashCase' name}}-data.service.ts", data.directory, true),
           templateFile: './templates/store/data-service.tpl'
+        }, {
+          type: 'add',
+          path: buildPath("./{{'dashCase' name}}.service.spec.ts", data.directory, true),
+          templateFile: './templates/component/service-spec.tpl'
         });
 
       }

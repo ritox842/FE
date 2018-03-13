@@ -1,7 +1,7 @@
 import {HttpClient} from "@angular/common/http";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {TestBed} from "@angular/core/testing";
-import {LoggedUsersDataService} from "./{{dashCase name}}-data.service";
+import { {{pascalCase name}}DataService} from "./{{dashCase name}}-data.service";
 import {users} from "./{{dashCase name}}.mocks";
 import {URI_CONSTANTS} from "@datorama/config/constants/uri.constants/constants/uri.constants";
 import {HTTP_REQUEST, mockUriUtil} from "@datorama/tests/utils";

@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from "@angular/core";
 import {downgradeComponent} from "@angular/upgrade/static";
-import { {{camelCase name}}Service} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.service";
+import { {{pascalCase name}}Service} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.service";
 import {Example} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.types";
 import {DatoGrid, DatoSnackbar, GridColumns, RowSelectionType, ToolbarAction} from "@datorama/core";
 

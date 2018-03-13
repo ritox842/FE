@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DatoTestComponent } from './test.component';
+import { LoginComponent } from './login.component';
 
-const declerations = [TestComponent];
+
+const declerations = [LoginComponent];
 
 @NgModule({
   imports: [CommonModule],
   declarations: [declerations],
   exports: [declerations]
 })
-export class TestModule {
+export class LoginModule {
 }

@@ -1,19 +1,19 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from "@angular/core";
 import {downgradeComponent} from "@angular/upgrade/static";
-import { testService} from "@datorama/modules/admin/test/test.service";
-import {Example} from "@datorama/modules/admin/test/test.types";
+import { LoginService} from "@datorama/modules/admin/login/login.service";
+import {Example} from "@datorama/modules/admin/login/login.types";
 import {DatoGrid, DatoSnackbar, GridColumns, RowSelectionType, ToolbarAction} from "@datorama/core";
 
 @Component({
-  selector: 'da-test',
-  templateUrl: './test.component.html',
+  selector: 'da-login',
+  templateUrl: './login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TestComponent extends DatoGrid<Example> implements OnInit {
+export class LoginComponent extends DatoGrid<Example> implements OnInit {
   /** Change data and Example to the appropriate name */
   data: Example[];
 
-  constructor(private testService: TestService,
+  constructor(private loginService: LoginService,
               private snackbar: DatoSnackbar,
               private cdr: ChangeDetectorRef) {
     super();
@@ -31,7 +31,7 @@ export class TestComponent extends DatoGrid<Example> implements OnInit {
   actionOnClick() {
     const selectedData = this.getSelectedRow();
 
-    this.testService.action(selectedData).subscribe(() => {
+    this.loginService.action(selectedData).subscribe(() => {
       this.removeRows(selectedData);
       this.snackbar.info('translate.string');
     }, (err) => {
@@ -89,7 +89,7 @@ export class TestComponent extends DatoGrid<Example> implements OnInit {
    * @returns {Subscription}
    */
   private fetchData() {
-    return this.testService.getUsers().subscribe((data) => {
+    return this.loginService.getUsers().subscribe((data) => {
       this.data = data;
       this.cdr.detectChanges();
     });
@@ -99,6 +99,6 @@ export class TestComponent extends DatoGrid<Example> implements OnInit {
 
 angular
   .module('app.components')
-  .directive('daTest', downgradeComponent({
-    component: TestComponent
+  .directive('daLogin', downgradeComponent({
+    component: LoginComponent
   }) as angular.IDirectiveFactory);

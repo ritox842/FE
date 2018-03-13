@@ -1,18 +1,18 @@
 import {async, ComponentFixture, TestBed} from "@angular/core/testing";
-import { TestComponent } from "./test.component";
-import { TestDataService } from "./test-data.service";
-import { TestService} from "./test.service";
+import { LoginComponent } from "./login.component";
+import { LoginDataService } from "./login-data.service";
+import { LoginService} from "./login.service";
 import {extendDefaultModule, getGridHeaderComponent, getGridHeaderComponentText} from "@datorama/tests/utils";
 import {dataServiceMock} from "./logged-users.mocks";
 import {DatoSnackbar} from "@datorama/core";
 import {ErrorObservable} from "rxjs/observable/ErrorObservable";
 
-describe('TestComponent', () => {
+describe('LoginComponent', () => {
 
-  let component: TestComponent;
-  let fixture: ComponentFixture<TestComponent>;
-  let testService: TestService;
-  let testDataService: TestDataService;
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
+  let loginService: LoginService;
+  let loginDataService: LoginDataService;
   let snackBar: DatoSnackbar;
 
   beforeEach(async () => {
@@ -20,22 +20,22 @@ describe('TestComponent', () => {
       {
         providers: [
           {
-            provide: TestDataService,
+            provide: LoginDataService,
             useValue: dataServiceMock
           },
-          TestService
+          LoginService
         ],
-        declarations: [TestComponent]
+        declarations: [LoginComponent]
       });
 
     TestBed.configureTestingModule(module).compileComponents();
-    testService = TestBed.get(TestService);
+    loginService = TestBed.get(LoginService);
     snackBar = TestBed.get(DatoSnackbar);
-    testDataService = TestBed.get(TestDataService);
+    loginDataService = TestBed.get(LoginDataService);
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TestComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
   });
 
@@ -64,18 +64,18 @@ describe('TestComponent', () => {
         token: 'token'
       };
     });
-    spyOn(testService, 'logoutUser').and.callThrough();
+    spyOn(loginService, 'logoutUser').and.callThrough();
     spyOn(snackBar, 'info').and.callThrough();
     fixture.detectChanges();
     await fixture.whenStable();
     component.logoutUser();
-    expect(testService.logoutUser).toHaveBeenCalled();
+    expect(loginService.logoutUser).toHaveBeenCalled();
     expect(snackBar.info).toHaveBeenCalled();
 
   }));
 
   it('should show an error message on error', async(async () => {
-    spyOn(testDataService, 'logoutUser').and.callFake(() => {
+    spyOn(loginDataService, 'logoutUser').and.callFake(() => {
       return ErrorObservable.create('error');
     });
     spyOn(component, 'getSelectedRow').and.callFake(() => {
@@ -83,12 +83,12 @@ describe('TestComponent', () => {
         id: 1
       };
     });
-    spyOn(testService, 'logoutUser').and.callThrough();
+    spyOn(loginService, 'logoutUser').and.callThrough();
     spyOn(snackBar, 'error').and.callThrough();
     fixture.detectChanges();
     await fixture.whenStable();
     component.logoutUser();
-    expect(testService.logoutUser).toHaveBeenCalled();
+    expect(loginService.logoutUser).toHaveBeenCalled();
     expect(snackBar.error).toHaveBeenCalled();
 
   }));
