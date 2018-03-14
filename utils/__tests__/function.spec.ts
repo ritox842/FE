@@ -1,38 +1,39 @@
-import {functionName} from "../src/function";
+import {getFunctionName} from "../src/function";
 
-class testClass {}
+class TestClass {}
 
 describe('Functions', () => {
 
-    describe('functionName', () => {
-        it('a null argument should return empty string', () => {
-            expect(functionName(null)).toEqual('');
+    describe('getFunctionName', () => {
+        
+        it('should return empty string when the argument is null', () => {
+            expect(getFunctionName(null)).toEqual('');
         });
 
-        it('an empty string argument should return empty string', () => {
-            expect(functionName('')).toEqual('');
+        it('should return empty string when the argument is empty string', () => {
+            expect(getFunctionName('')).toEqual('');
         });
 
-        it('an object should return empty string', () => {
-            expect(functionName({})).toEqual('');
+        it('should return empty string when the argument is an object', () => {
+            expect(getFunctionName({})).toEqual('');
         });
 
-        it('a named function should return the function name', () => {
-            expect(functionName(function foo(){})).toEqual('foo');
+        it('should return the function when the argument is a named function', () => {
+            expect(getFunctionName(function foo(){})).toEqual('foo');
         });
 
-        it('an anonymous function should return an empty string', () => {
-            expect(functionName(function(){})).toEqual('');
+        it('should return an empty string when the argument is an anonymous function ', () => {
+            expect(getFunctionName(function(){})).toEqual('');
         });
 
-        it('a class should return the class\'s name', () => {
-            expect(functionName(testClass)).toEqual('testClass');
+        it('should return the class\'s name when the argument is a class ', () => {
+            expect(getFunctionName(TestClass)).toEqual('testClass');
         });
 
         it('should return the function name', () => {
             const es5Func = function es5() {};
             delete es5Func.name;
-            expect(functionName(es5Func)).toEqual('es5');
+            expect(getFunctionName(es5Func)).toEqual('es5');
         });
     });
 
