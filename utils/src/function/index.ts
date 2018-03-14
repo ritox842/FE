@@ -41,3 +41,26 @@ export function compose(...funcs) {
         return funcs.reduce((value, func) => func(value), value);
     };
 }
+
+/**
+ * Return the name of the function
+ * @example getFunctionName(function myAwesomeFunc(){}) ---> 'myAwesomeFunc'
+ * @param func
+ */
+export function getFunctionName(func) {
+
+    if (func == null || typeof func !== 'function') {
+        return '';
+    }
+
+    // check if we've the name property (ES6)
+    if (func.hasOwnProperty('name')) {
+        return func.name;
+    }
+
+    // ES5
+    let funcName = func.toString();
+    funcName = funcName.substr('function '.length);
+    funcName = funcName.substr(0, funcName.indexOf('('));
+    return funcName;
+}

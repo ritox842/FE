@@ -2,4 +2,7 @@ utils/node_modules
 utils/.vscode
 utils/.idea
 utils/dist
+
+atomic-css/dist
+
 /.idea/
