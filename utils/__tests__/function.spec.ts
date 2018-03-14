@@ -5,7 +5,7 @@ class TestClass {}
 describe('Functions', () => {
 
     describe('getFunctionName', () => {
-        
+
         it('should return empty string when the argument is null', () => {
             expect(getFunctionName(null)).toEqual('');
         });
@@ -27,7 +27,7 @@ describe('Functions', () => {
         });
 
         it('should return the class\'s name when the argument is a class ', () => {
-            expect(getFunctionName(TestClass)).toEqual('testClass');
+            expect(getFunctionName(TestClass)).toEqual('TestClass');
         });
 
         it('should return the function name', () => {
