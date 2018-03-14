@@ -44,10 +44,10 @@ export function compose(...funcs) {
 
 /**
  * Return the name of the function
- * @example functionName(function myAwesomeFunc(){}) ---> 'myAwesomeFunc'
+ * @example getFunctionName(function myAwesomeFunc(){}) ---> 'myAwesomeFunc'
  * @param func
  */
-export function functionName(func) {
+export function getFunctionName(func) {
 
     if (func == null || typeof func !== 'function') {
         return '';
