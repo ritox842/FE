@@ -1,3 +1,5 @@
+import {isNumber} from "../validators";
+
 /**
  *
  * @param num - the number to round
@@ -5,10 +7,10 @@
  * @returns {number} - the rounded number
  */
 export function roundToDecimal(num, precision) {
-    if (isNaN(num)) {
+    if (!isNumber(num)) {
         throw 'value to round is not a number';
     }
-    if (precision && isNaN(precision)) {
+    if (precision && !isNumber(precision)) {
         throw 'precision value is not a number';
     }
     const factor = precision ? Math.pow(10, precision) : Math.pow(10, 2);

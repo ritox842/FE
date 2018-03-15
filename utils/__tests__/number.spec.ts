@@ -5,10 +5,7 @@ describe('Numbers', () => {
     describe('roundToDecimal', () => {
 
         it('should throw an error when 1st argument is missing', () => {
-            const missingFirstArgument = () => {
-                return roundToDecimal();
-            }
-            expect(missingFirstArgument).toThrow('value to round is not a number');
+            expect(roundToDecimal).toThrow('value to round is not a number');
         });
 
         it('should throw an error when 1st argument is not a number', () => {
