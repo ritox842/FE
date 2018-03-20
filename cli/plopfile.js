@@ -198,12 +198,16 @@ module.exports = function(plop) {
       type: 'input',
       name: 'name',
       message: 'Please Enter a Service Name (camelCase)'
-    }],
-    actions: [{
-      type: 'add',
-      path: "./{{'dashCase' name}}.service.ts",
-      templateFile: './templates/service/service.tpl'
-    }]
+    }].concat(directoryActions),
+    actions: function(data){
+      return [
+        {
+          type: 'add',
+          path: buildPath("{{'dashCase' name}}.service.ts", data.directory, data.createDir),
+          templateFile: './templates/service/service.tpl'
+        }
+      ]
+    }
   });
 
   /* Interface */
