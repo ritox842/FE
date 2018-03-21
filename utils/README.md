@@ -56,6 +56,7 @@
 - isFunction
 - isObject
 - isEmpty
+- isNumber
 
 #### Enums
 - ContentType
