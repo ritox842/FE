@@ -32,8 +32,8 @@
 - compose
 
 #### Number
-- roundToDecimal
-- randomBetween
+- round
+- random
 
 #### Object
 - get
