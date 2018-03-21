@@ -61,5 +61,12 @@ describe('Numbers', () => {
             expect(random()).toBeGreaterThanOrEqual(0);
         });
 
+        it('it should throw and error if the second argument is greater than the first', () => {
+            const firstIsGreaterTheSecond = () => {
+                return random(30,10);
+            };
+            expect(firstIsGreaterTheSecond).toThrow('the upper bound should be grater than the lower bound');
+        });
+
     });
 });

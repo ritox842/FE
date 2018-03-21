@@ -36,5 +36,11 @@ export function random(lower: number = 0, upper: number = 1) {
     if(!isNumber(upper)) {
         throw 'the upper bound is not a number';
     }
+    if(lower > upper) {
+        throw 'the upper bound should be grater than the lower bound';
+    }
+    if(lower === 0 && upper === 1) {
+        return Math.random();
+    }
     return lower + Math.floor(Math.random() * (upper - lower + 1));
 }
