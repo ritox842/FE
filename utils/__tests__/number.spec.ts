@@ -61,7 +61,7 @@ describe('Numbers', () => {
             expect(random()).toBeGreaterThanOrEqual(0);
         });
 
-        it('it should throw and error if the second argument is greater than the first', () => {
+        it('it should throw and error if the first argument is greater than the second', () => {
             const firstIsGreaterTheSecond = () => {
                 return random(30,10);
             };
