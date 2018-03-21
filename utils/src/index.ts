@@ -3,6 +3,7 @@ export * from './coercion';
 export * from './collection';
 export * from './enums';
 export * from './function';
+export * from './number';
 export * from './object';
 export * from './string';
 export * from './types';
