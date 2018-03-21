@@ -21,7 +21,7 @@ export function round(num, precision) {
  * Random number in given range, example:
  *
  * ```javascript
- * randomBetween(10, 20)
+ * random(10, 20)
  * ```
  *
  * @param {number} lower bound of random range
