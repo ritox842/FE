@@ -6,7 +6,7 @@ import {isNumber} from "../validators";
  * @param precision - how many placed after the decimal point to retain (default: 2, i.e. to the hundredth decimal)
  * @returns {number} - the rounded number
  */
-export function roundToDecimal(num, precision) {
+export function round(num, precision) {
     if (!isNumber(num)) {
         throw 'value to round is not a number';
     }
@@ -29,7 +29,7 @@ export function roundToDecimal(num, precision) {
  * @returns {number}
  */
 
-export function randomBetween(lower: number = 0, upper: number = 1) {
+export function random(lower: number = 0, upper: number = 1) {
     if(!isNumber(lower)) {
         throw 'the lower bound is not a number';
     }
