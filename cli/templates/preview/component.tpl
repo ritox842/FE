@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'dato-{{dashCase name}}',
+  selector: 'dato-{{dashCase name}}-preview',
   templateUrl: './{{dashCase name}}-preview.component.html',
   styleUrls: ['./{{dashCase name}}-preview.component.scss']
 })

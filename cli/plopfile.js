@@ -43,6 +43,8 @@ module.exports = function(plop) {
         message: 'Do you need a service?'
       }).concat(chooseDirAction),
     actions: function(data) {
+      data.core = !data.platform;
+
       const actions = [{
           type: 'add',
           path: buildPath("{{'dashCase' name}}.theme.scss", data.directory, true),
@@ -198,12 +200,16 @@ module.exports = function(plop) {
       type: 'input',
       name: 'name',
       message: 'Please Enter a Service Name (camelCase)'
-    }],
-    actions: [{
-      type: 'add',
-      path: "./{{'dashCase' name}}.service.ts",
-      templateFile: './templates/service/service.tpl'
-    }]
+    }].concat(directoryActions),
+    actions: function(data){
+      return [
+        {
+          type: 'add',
+          path: buildPath("{{'dashCase' name}}.service.ts", data.directory, data.createDir),
+          templateFile: './templates/service/service.tpl'
+        }
+      ]
+    }
   });
 
   /* Interface */

@@ -31,6 +31,9 @@
 - curry
 - compose
 
+#### Number
+- roundToDecimal
+
 #### Object
 - get
 - has
@@ -53,6 +56,7 @@
 - isFunction
 - isObject
 - isEmpty
+- isNumber
 
 #### Enums
 - ContentType

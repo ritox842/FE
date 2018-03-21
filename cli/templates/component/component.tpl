@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from "@angular/
   selector: 'dato-{{dashCase name}}',
  {{/if}}
   templateUrl: './{{dashCase name}}.component.html',
-  {{#if !platform}}
+  {{#if core}}
   styleUrls: ['./{{dashCase name}}.component.scss'],
  {{/if}}
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -15,7 +15,7 @@ import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from "@angular/
 {{#if platform}}
 export class {{pascalCase name}}Component implements OnInit, OnDestroy {
 {{else}}
-export class Dato{{pascalCase name}}Component implements OnInit, OnDestroy
+export class Dato{{pascalCase name}}Component implements OnInit, OnDestroy {
 {{/if}}
   constructor() {
 
@@ -25,7 +25,7 @@ export class Dato{{pascalCase name}}Component implements OnInit, OnDestroy
 
   }
 
-  ngOnDestroy {
+  ngOnDestroy() {
 
   }
 
