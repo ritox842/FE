@@ -8,7 +8,9 @@
     "test": "jest",
     "build": "rm -rf ./dist && tsc",
     "prepublish": "rm -rf ./dist && npm run build",
-    "pub": "npm publish --access public"
+    "pub": "npm publish --access public",
+    "docs": "typedoc --out ./docs ./src",
+    "github-pages": "npm run docs && node ./../scripts/github-deploy.js"
   },
   "typings": "./dist/index.d.ts",
   "jest": {
@@ -25,6 +27,7 @@
     "@types/jest": "^21.1.4",
     "jest": "^21.2.1",
     "ts-jest": "^21.1.3",
+    "typedoc": "^0.11.1",
     "typescript": "^2.5.3"
   },
   "dependencies": {
@@ -59,5 +62,8 @@
     "lodash.unescape": "^4.0.1",
     "lodash.union": "^4.6.0",
     "lodash.values": "^4.3.0"
+  },
+  "config": {
+    "github_deploy_source": "docs"
   }
 }

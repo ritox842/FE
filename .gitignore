@@ -1,5 +1,11 @@
+node_modules
+
 utils/node_modules
 utils/.vscode
 utils/.idea
 utils/dist
+utils/docs
+
+atomic-css/dist
+
 /.idea/
