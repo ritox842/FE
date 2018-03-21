@@ -31,6 +31,9 @@
 - curry
 - compose
 
+#### Number
+- roundToDecimal
+
 #### Object
 - get
 - has
