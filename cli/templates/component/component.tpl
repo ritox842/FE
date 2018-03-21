@@ -15,7 +15,7 @@ import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from "@angular/
 {{#if platform}}
 export class {{pascalCase name}}Component implements OnInit, OnDestroy {
 {{else}}
-export class Dato{{pascalCase name}}Component implements OnInit, OnDestroy
+export class Dato{{pascalCase name}}Component implements OnInit, OnDestroy {
 {{/if}}
   constructor() {
 
@@ -25,7 +25,7 @@ export class Dato{{pascalCase name}}Component implements OnInit, OnDestroy
 
   }
 
-  ngOnDestroy {
+  ngOnDestroy() {
 
   }
 
