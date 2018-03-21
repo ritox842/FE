@@ -1,7 +1,12 @@
-@import './utils/bound.util';
+@import 'utils/bound.util';
+
+////
+/// @group Padding
+////
 
 @include bound(p, padding, 0, 30);
 
+///
 .no-padding {
   padding: 0;
 }

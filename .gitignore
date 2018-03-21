@@ -9,6 +9,7 @@ utils/docs
 
 
 atomic-css/dist
+atomic-css/docs
 
 /.idea/
 utils/.rpt2_cache

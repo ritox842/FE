@@ -1,19 +1,28 @@
+////
+/// @group Texts
+////
+
+/// Align the text to the left
 .text-left {
   text-align: left;
 }
 
+/// Align the text to center
 .text-center {
   text-align: center;
 }
 
+/// Align the text to the right
 .text-right {
   text-align: right;
 }
 
+/// Make the text CAPITALIZE
 .capitalize {
   text-transform: capitalize;
 }
 
+/// Make the text with no wrap
 .nowrap {
   white-space: nowrap;
 }

@@ -1,0 +1,8 @@
+@mixin zIndex-x($stepsNumber, $step) {
+  $steps: floor($stepsNumber / $step);
+  @for $i from 0 through $steps {
+    .z-#{$step * $i} {
+      z-index: #{$step * $i}
+    }
+  }
+}

@@ -5,11 +5,17 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "docs": "gulp sassdoc",
+    "github-pages": "npm run docs && node ./../scripts/github-deploy.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "sassdoc": "^2.5.0"
+  },
+  "config": {
+    "github_deploy_source": "docs"
   }
 }

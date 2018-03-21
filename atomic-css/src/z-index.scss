@@ -1,0 +1,16 @@
+@import 'utils/z-index.util';
+
+////
+/// @group z-index
+////
+
+///
+.z-auto {
+  z-index: auto
+}
+
+
+$zIndexStep: 10;
+$zIndexSteps: 50;
+
+@include zIndex-x($zIndexSteps, $zIndexStep);
