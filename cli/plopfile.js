@@ -43,6 +43,8 @@ module.exports = function(plop) {
         message: 'Do you need a service?'
       }).concat(chooseDirAction),
     actions: function(data) {
+      data.core = !data.platform;
+
       const actions = [{
           type: 'add',
           path: buildPath("{{'dashCase' name}}.theme.scss", data.directory, true),
