@@ -1,3 +1,6 @@
+API reference can be found at:
+https://datorama.github.io/FE/utils
+
 #### Array 
 - intersection
 - union
