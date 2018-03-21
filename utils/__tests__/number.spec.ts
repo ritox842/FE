@@ -1,4 +1,4 @@
-import {roundToDecimal} from "../src/number";
+import {randomBetween, roundToDecimal} from "../src/number";
 
 describe('Numbers', () => {
 
@@ -35,4 +35,26 @@ describe('Numbers', () => {
         });
     });
 
+    describe('randomBetween', () => {
+
+        it('should throw an error when 1st argument is not a number', () => {
+            const firstNotANumber = () => {
+                return randomBetween('number', 20);
+            };
+            expect(firstNotANumber).toThrow('the lower bound is not a number');
+        });
+
+        it('should throw an error when 2st argument is not a number', () => {
+            const secondNotANumber = () => {
+                return randomBetween(0, "twenty");
+            };
+            expect(secondNotANumber).toThrow('the upper bound is not a number');
+        });
+
+        it('should return a value between the first argument and the second argument', () => {
+            expect(randomBetween(0, 20)).toBeLessThanOrEqual(20)
+            expect(randomBetween(0, 20)).toBeGreaterThanOrEqual(0);
+        });
+
+    });
 });
