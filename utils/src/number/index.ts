@@ -16,3 +16,14 @@ export function roundToDecimal(num, precision) {
     const factor = precision ? Math.pow(10, precision) : Math.pow(10, 2);
     return Math.round(num * factor) / factor;
 }
+
+
+export function randomBetween(lower: number = 0, upper: number = 1) {
+    if(!isNumber(lower)) {
+        throw 'the lower bound is not a number';
+    }
+    if(!isNumber(upper)) {
+        throw 'the upper bound is not a number';
+    }
+    return lower + Math.floor(Math.random() * (upper - lower + 1));
+}

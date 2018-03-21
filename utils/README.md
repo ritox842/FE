@@ -33,6 +33,7 @@
 
 #### Number
 - roundToDecimal
+- randomBetween
 
 #### Object
 - get
