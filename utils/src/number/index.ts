@@ -17,6 +17,17 @@ export function roundToDecimal(num, precision) {
     return Math.round(num * factor) / factor;
 }
 
+/**
+ * Random number in given range, example:
+ *
+ * ```javascript
+ * randomBetween(10, 20)
+ * ```
+ *
+ * @param {number} lower bound of random range
+ * @param {number} upper bound of random range
+ * @returns {number}
+ */
 
 export function randomBetween(lower: number = 0, upper: number = 1) {
     if(!isNumber(lower)) {
