@@ -8,15 +8,15 @@ import { Dato{{pascalCase name}}Component } from './{{dashCase name}}.component'
 
 
 {{#if platform}}
-const declarations = [{{pascalCase name}}Component];
+const publicApi = [{{pascalCase name}}Component];
 {{else}}
-const declarations = [Dato{{pascalCase name}}Component];
+const publicApi = [Dato{{pascalCase name}}Component];
 {{/if}}
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [declarations],
-  exports: [declarations]
+  declarations: [publicApi],
+  exports: [publicApi]
 })
 {{#if platform}}
 export class {{pascalCase name}}Module {

@@ -36,10 +36,12 @@ module.exports = function(plop) {
       }, {
         type: 'confirm',
         name: 'grid',
+        default: false,
         message: 'It\'s a Grid?'
       }, {
         type: 'confirm',
         name: 'service',
+        default: false,
         message: 'Do you need a service?'
       }).concat(chooseDirAction),
     actions: function(data) {
