@@ -35,7 +35,8 @@ https://datorama.github.io/FE/utils
 - compose
 
 #### Number
-- roundToDecimal
+- round
+- random
 
 #### Object
 - get
