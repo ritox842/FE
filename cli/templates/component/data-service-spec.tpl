@@ -6,7 +6,7 @@ import {users} from "./{{dashCase name}}.mocks";
 import {URI_CONSTANTS} from "@datorama/config/constants/uri.constants/constants/uri.constants";
 import {HTTP_REQUEST, mockUriUtil} from "@datorama/tests/utils";
 
-fdescribe('{{pascalCase name}}DataService', () => {
+describe('{{pascalCase name}}DataService', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
   let {{camelCase name}}DataService: {{pascalCase name}}DataService;

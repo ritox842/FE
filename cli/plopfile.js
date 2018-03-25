@@ -6,6 +6,7 @@ module.exports = function(plop) {
   const basePath = process.cwd();
 
   plop.setPrompt('directory', promptDirectory);
+  plop.setWelcomeMessage(`💪 Datorama CLI - Only for Professional Developers 👻`);
 
   const chooseDirAction = {
     type: 'directory',
@@ -46,7 +47,7 @@ module.exports = function(plop) {
       }).concat(chooseDirAction),
     actions: function(data) {
       data.core = !data.platform;
-
+      
       const actions = [{
           type: 'add',
           path: buildPath("{{'dashCase' name}}.theme.scss", data.directory, true),
@@ -115,11 +116,11 @@ module.exports = function(plop) {
         }, {
           type: 'add',
           path: buildPath("./{{'dashCase' name}}.service.ts", data.directory, true),
-          templateFile: './templates/service/service.tpl'
+          templateFile: './templates/component/service.tpl'
         }, {
           type: 'add',
           path: buildPath("./{{'dashCase' name}}-data.service.ts", data.directory, true),
-          templateFile: './templates/store/data-service.tpl'
+          templateFile: './templates/component/data-service.tpl'
         }, {
           type: 'add',
           path: buildPath("./{{'dashCase' name}}.service.spec.ts", data.directory, true),
@@ -139,6 +140,11 @@ module.exports = function(plop) {
           type: 'add',
           path: buildPath("./{{'dashCase' name}}.mocks.ts", data.directory, true),
           templateFile: './templates/component/mocks.tpl'
+        });
+        actions.push({
+          type: 'add',
+          path: buildPath("./index.ts", data.directory, true),
+          templateFile: './templates/component/index.tpl'
         });
       }
 
@@ -208,7 +214,7 @@ module.exports = function(plop) {
         {
           type: 'add',
           path: buildPath("{{'dashCase' name}}.service.ts", data.directory, data.createDir),
-          templateFile: './templates/service/service.tpl'
+          templateFile: './templates/component/service.tpl'
         }
       ]
     }
@@ -231,48 +237,6 @@ module.exports = function(plop) {
     }
   });
 
-  /* Store */
-  plop.setGenerator('DA Store', {
-    description: 'Datorama store',
-    prompts: [{
-      type: 'input',
-      name: 'name',
-      message: 'Store name'
-    }].concat([chooseDirAction]),
-    actions: function(data) {
-      return [{
-          type: 'add',
-          path: genPath(data.directory, "./config/{{'dashCase' name}}.model.ts"),
-          templateFile: './templates/store/model.tpl'
-        },
-        {
-          type: 'add',
-          path: genPath(data.directory, "./config/{{'dashCase' name}}.providers.ts"),
-          templateFile: './templates/store/providers.tpl'
-        },
-        {
-          type: 'add',
-          path: genPath(data.directory, "./config/{{'dashCase' name}}.store.ts"),
-          templateFile: './templates/store/store.tpl'
-        },
-        {
-          type: 'add',
-          path: genPath(data.directory, "./config/{{'dashCase' name}}.service.ts"),
-          templateFile: './templates/store/service.tpl'
-        },
-        {
-          type: 'add',
-          path: genPath(data.directory, "./config/{{'dashCase' name}}-data.service.ts"),
-          templateFile: './templates/store/data-service.tpl'
-        },
-        {
-          type: 'add',
-          path: genPath(data.directory, "./config/{{'dashCase' name}}.query.ts"),
-          templateFile: './templates/store/query.tpl'
-        }
-      ];
-    }
-  });
 
   function genPath(directory, file) {
     return path.resolve(basePath, directory, file);
