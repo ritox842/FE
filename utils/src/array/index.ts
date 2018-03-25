@@ -64,9 +64,9 @@ export function last<T>(arr: T[]): T {
 }
 
 /**
- *
+ * Remove array duplicates
  * @param array
  */
-export function uniq(array) {
+export function uniq<T>(array: T[]): T[] {
     return Array.from(new Set(array));
 }
