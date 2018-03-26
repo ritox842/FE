@@ -3,6 +3,7 @@ import {downgradeComponent} from "@angular/upgrade/static";
 import { {{pascalCase name}}Service} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.service";
 import {Example} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.types";
 import {DatoGrid, DatoSnackbar, GridColumns, RowSelectionType, ToolbarAction} from "@datorama/core";
+import {forkJoin} from 'rxjs/observable/forkJoin';
 
 @Component({
   selector: 'da-{{dashCase name}}',
@@ -21,15 +22,21 @@ export class {{pascalCase name}}Component extends DatoGrid<Example> implements O
 
   ngOnInit() {
     super.ngOnInit();
-    this.toolbarActions = this.getToolbarActions();
-    this.fetchData();
+    forkJoin(
+      this.datoGridReady,
+      this.{{camelCase name}}Service.getUsers()
+    ).subscribe(([grid, data]) => {
+      this.data = data;
+      this.setRows(this.data);
+      this.cdr.detectChanges();
+    });
   }
 
   /**
    * Change to the appropriate name
    */
   actionOnClick() {
-    const selectedData = this.getSelectedRow();
+    const selectedData = this.getSelectedRows(true);
 
     this.{{camelCase name}}Service.action(selectedData).subscribe(() => {
       this.removeRows(selectedData);
@@ -65,36 +72,6 @@ export class {{pascalCase name}}Component extends DatoGrid<Example> implements O
       }
     ];
   }
-
-  /**
-   *
-   * @param {Example[]} value
-   * @returns {Partial<Example>[]}
-   */
-  getRows(value: Example[]): Partial<Example>[] {
-    return value;
-  }
-
-  /**
-   *
-   * @param $event
-   */
-  ready($event) {
-    this.gridApi = $event.api;
-    this.setRows(this.data);
-  }
-
-  /**
-   *
-   * @returns {Subscription}
-   */
-  private fetchData() {
-    return this.{{camelCase name}}Service.getUsers().subscribe((data) => {
-      this.data = data;
-      this.cdr.detectChanges();
-    });
-  }
-
 }
 
 angular

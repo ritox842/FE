@@ -1,7 +1,7 @@
-<ng-container *ngIf="users; else loading">
+<ng-container *ngIf="data; else loading">
 	<dato-grid-header [grid]="gridRef">..translate text</dato-grid-header>
 	<dato-grid-toolbar [grid]="gridRef" class="mb-10" [actions]="toolbarActions"></dato-grid-toolbar>
-	<dato-grid [options]="options" #gridRef (gridReady)="ready($event)"></dato-grid>
+	<dato-grid [options]="options" #gridRef></dato-grid>
 </ng-container>
 
 <ng-template #loading>
