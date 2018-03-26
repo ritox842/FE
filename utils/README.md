@@ -33,6 +33,7 @@ https://datorama.github.io/FE/utils
 - debounce
 - curry
 - compose
+- partial
 
 #### Number
 - round

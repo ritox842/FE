@@ -1,6 +1,7 @@
 import _debounce from 'lodash.debounce';
 import _throttle from 'lodash.throttle';
 import _curry from 'lodash.curry';
+import _partial from "lodash.partial";
 
 /**
  *
@@ -40,6 +41,15 @@ export function compose(...funcs) {
     return (value) => {
         return funcs.reduce((value, func) => func(value), value);
     };
+}
+
+/**
+ *
+ * @param func
+ * @param args
+ */
+export function partial(func, ...args) {
+    return _partial(func, ...args);
 }
 
 /**
