@@ -59,7 +59,7 @@ describe('{{pascalCase name}}Component', () => {
   }));
 
   it('should call logout and show the success message', async(async () => {
-    spyOn(component, 'getSelectedRow').and.callFake(() => {
+    spyOn(component, 'getSelectedRows').and.callFake(() => {
       return {
         token: 'token'
       };
@@ -78,7 +78,7 @@ describe('{{pascalCase name}}Component', () => {
     spyOn({{camelCase name}}DataService, 'logoutUser').and.callFake(() => {
       return ErrorObservable.create('error');
     });
-    spyOn(component, 'getSelectedRow').and.callFake(() => {
+    spyOn(component, 'getSelectedRows').and.callFake(() => {
       return {
         id: 1
       };
