@@ -3,7 +3,7 @@ import {downgradeComponent} from "@angular/upgrade/static";
 import { {{pascalCase name}}Service} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.service";
 import {Example} from "@datorama/modules/admin/{{dashCase name}}/{{dashCase name}}.types";
 import {DatoGrid, DatoSnackbar, GridColumns, RowSelectionType, ToolbarAction} from "@datorama/core";
-import {forkJoin} from 'rxjs/observable/forkJoin';
+import {concatMap, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'da-{{dashCase name}}',
@@ -22,14 +22,16 @@ export class {{pascalCase name}}Component extends DatoGrid<Example> implements O
 
   ngOnInit() {
     super.ngOnInit();
-    forkJoin(
-      this.datoGridReady,
-      this.{{camelCase name}}Service.getUsers()
-    ).subscribe(([grid, data]) => {
-      this.data = data;
-      this.setRows(this.data);
-      this.cdr.detectChanges();
-    });
+
+    this.{{camelCase name}}Service.getUsers()
+      .pipe(tap((users) => {
+        this.users = users;
+        this.cdr.detectChanges();
+      }))
+      .pipe(concatMap(() => this.datoGridReady))
+      .subscribe(() => {
+        this.setRows(this.users);
+      }, this.handleError.bind(this));
   }
 
   /**
@@ -71,6 +73,14 @@ export class {{pascalCase name}}Component extends DatoGrid<Example> implements O
         headerName: 'translate.value'
       }
     ];
+  }
+
+  /**
+   *
+   * @param err
+   */
+  private handleError(err) {
+    this.snackbar.error('admin.loggedUsers.error');
   }
 }
 
