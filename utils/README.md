@@ -38,6 +38,7 @@ https://datorama.github.io/FE/utils
 #### Number
 - round
 - random
+- isFraction
 
 #### Object
 - get

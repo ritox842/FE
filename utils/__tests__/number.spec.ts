@@ -1,4 +1,4 @@
-import {random, round} from "../src/number";
+import {random, round, isFraction} from "../src/number";
 
 describe('Numbers', () => {
 
@@ -52,12 +52,12 @@ describe('Numbers', () => {
         });
 
         it('should return a value between the first argument and the second argument', () => {
-            expect(random(0, 20)).toBeLessThanOrEqual(20)
+            expect(random(0, 20)).toBeLessThanOrEqual(20);
             expect(random(0, 20)).toBeGreaterThanOrEqual(0);
         });
 
         it('should return a value between 0 and 1 if no range specified', () => {
-            expect(random()).toBeLessThanOrEqual(1)
+            expect(random()).toBeLessThanOrEqual(1);
             expect(random()).toBeGreaterThanOrEqual(0);
         });
 
@@ -66,6 +66,28 @@ describe('Numbers', () => {
                 return random(30,10);
             };
             expect(firstIsGreaterTheSecond).toThrow('the upper bound should be grater than the lower bound');
+        });
+
+    });
+
+    describe('isFraction', ()=> {
+
+        it('should throw an error when argument is not a number', () => {
+            const argIsString = () => isFraction('pita');
+            const argIsObject = () => isFraction({});
+
+            expect(argIsString).toThrow('expected a number but got string');
+            expect(argIsObject).toThrow('expected a number but got object');
+        });
+
+        it('should return true (number is fraction)', () => {
+            const result = isFraction(1.2);
+            expect(result).toBe(true);
+        });
+
+        it('should return false (number is integer)', () => {
+            const result = isFraction(1);
+            expect(result).toBe(false);
         });
 
     });

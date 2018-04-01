@@ -44,3 +44,15 @@ export function random(lower: number = 0, upper: number = 1) {
     }
     return lower + Math.floor(Math.random() * (upper - lower + 1));
 }
+
+/**
+ * Checks if a given number is a fraction or an integer
+ * @param {number} number - The number to check
+ * @returns {boolean} - True if the number is a fraction
+ */
+export function isFraction(number: number) {
+    if (!isNumber(number)) {
+        throw `expected a number but got ${typeof number}`;
+    }
+    return number % 1 !== 0
+}
