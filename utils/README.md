@@ -50,6 +50,7 @@ https://datorama.github.io/FE/utils
 - diff
 - cloneDeep
 - omit
+- deepEqual
 
 #### String
 - escape

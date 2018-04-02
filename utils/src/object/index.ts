@@ -8,7 +8,7 @@ import _transform from 'lodash.transform';
 import _isEqual from 'lodash.isequal';
 import _cloneDeep from 'lodash.clonedeep';
 import _omit from 'lodash.omit';
-
+import _deepEqual from "deep-equal";
 import {isObject} from "../validators";
 
 /**
@@ -109,4 +109,15 @@ export function cloneDeep(objects) {
  */
 export function omit(object: Object, paths: string | string[]): Object {
   return _omit(object, paths);
+}
+
+/**
+ * Returns whether the object are equal 
+ * @param {Object} objectA
+ * @param {Object} objectB
+ * @param opts
+ * @returns {boolean}
+ */
+export function deepEqual(objectA: Object, objectB: Object, opts: any = {}): boolean {
+  return _deepEqual(objectA, objectB, opts);
 }

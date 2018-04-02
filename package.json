@@ -4,5 +4,9 @@
   "scripts": {},
   "devDependencies": {
     "gh-pages": "^1.1.0"
+  },
+  "dependencies": {
+    "deep-equal": "^1.0.1",
+    "save": "^2.3.2"
   }
 }
