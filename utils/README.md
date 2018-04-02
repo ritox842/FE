@@ -49,6 +49,7 @@ https://datorama.github.io/FE/utils
 - merge
 - diff
 - cloneDeep
+- omit
 
 #### String
 - escape
