@@ -7,6 +7,7 @@ import _merge from 'lodash.merge';
 import _transform from 'lodash.transform';
 import _isEqual from 'lodash.isequal';
 import _cloneDeep from 'lodash.clonedeep';
+import _omit from 'lodash.omit';
 
 import {isObject} from "../validators";
 
@@ -99,4 +100,13 @@ function changes(object, base) {
  */
 export function cloneDeep(objects) {
   return _cloneDeep(objects);
+}
+
+/**
+ * @param {Object} object
+ * @param {string | string[]} paths
+ * @returns {Object}
+ */
+export function omit(object: Object, paths: string | string[]): Object {
+  return _omit(object, paths);
 }
