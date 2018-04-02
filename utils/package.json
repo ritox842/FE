@@ -65,7 +65,8 @@
     "lodash.unescape": "^4.0.1",
     "lodash.union": "^4.6.0",
     "lodash.values": "^4.3.0",
-    "lodash.partial": "^4.2.1"
+    "lodash.partial": "^4.2.1",
+    "lodash.omit": "^4.5.0"
   },
   "config": {
     "github_deploy_source": "docs"
