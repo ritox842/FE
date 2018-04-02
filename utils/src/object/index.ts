@@ -8,6 +8,7 @@ import _transform from 'lodash.transform';
 import _isEqual from 'lodash.isequal';
 import _cloneDeep from 'lodash.clonedeep';
 import _omit from 'lodash.omit';
+import _omitBy from 'lodash.omitby';
 import _deepEqual from "deep-equal";
 import {isObject} from "../validators";
 
@@ -109,6 +110,15 @@ export function cloneDeep(objects) {
  */
 export function omit(object: Object, paths: string | string[]): Object {
   return _omit(object, paths);
+}
+
+/**
+ * @param {Object} object
+ * @param predicate
+ * @returns {Object}
+ */
+export function omitBy(object: Object, predicate): Object {
+    return _omitBy(object, predicate);
 }
 
 /**
