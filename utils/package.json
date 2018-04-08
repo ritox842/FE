@@ -45,6 +45,7 @@
     "lodash.filter": "^4.6.0",
     "lodash.find": "^4.6.0",
     "lodash.findindex": "^4.6.0",
+    "lodash.findkey": "^4.6.0",
     "lodash.foreach": "^4.5.0",
     "lodash.get": "^4.4.2",
     "lodash.groupby": "^4.6.0",
@@ -59,14 +60,14 @@
     "lodash.mapvalues": "^4.6.0",
     "lodash.merge": "^4.6.1",
     "lodash.minby": "^4.6.0",
+    "lodash.partial": "^4.2.1",
     "lodash.reject": "^4.6.0",
     "lodash.sortby": "^4.7.0",
     "lodash.throttle": "^4.1.1",
     "lodash.transform": "^4.6.0",
     "lodash.unescape": "^4.0.1",
     "lodash.union": "^4.6.0",
-    "lodash.values": "^4.3.0",
-    "lodash.partial": "^4.2.1"
+    "lodash.values": "^4.3.0"
   },
   "config": {
     "github_deploy_source": "docs"

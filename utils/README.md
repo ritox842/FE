@@ -17,6 +17,7 @@ https://datorama.github.io/FE/utils
 - coerceArray
 
 #### Collection
+- findKey
 - sortBy
 - find
 - forEach
@@ -65,6 +66,7 @@ https://datorama.github.io/FE/utils
 - isObject
 - isEmpty
 - isNumber
+- isEqual
 
 #### Enums
 - ContentType
