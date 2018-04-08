@@ -111,7 +111,7 @@ export function omit(object: Object, paths: string | string[]) {
     if (!object) {
         throw 'No object given';
     }
-    if (typeof object !== 'object') {
+    if (!isObject(object)) {
         throw `Expected an object but got ${typeof object} instead`;
     }
     const pathIsArray = Array.isArray(paths);
@@ -130,9 +130,7 @@ export function omit(object: Object, paths: string | string[]) {
 
     const newObj = {...object};
     if (pathIsArray) {
-        return (paths as string[]).reduce((acc, key) => {
-            return omitPath(acc, key);
-        }, newObj);
+        return (paths as string[]).reduce((acc, key) => omitPath(acc, key), newObj);
     }
     return omitPath(newObj, paths as string);
 }

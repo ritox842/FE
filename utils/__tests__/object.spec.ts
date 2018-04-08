@@ -66,6 +66,7 @@ describe('Objects', () => {
 
             it('should remove nested property', () => {
                 const result = omit(originalObj, 'a.b.c');
+                expect(result.a.b).toBeDefined();
                 expect(result.a.b.c).toBeUndefined();
             });
         });
@@ -80,6 +81,7 @@ describe('Objects', () => {
             it('should remove all the given keys', () => {
                 const result = omit(originalObj, ['f', 'a.b.c']);
                 expect(result.f).toBeUndefined();
+                expect(result.a.b).toBeDefined();
                 expect(result.a.b.c).toBeUndefined();
             });
 
