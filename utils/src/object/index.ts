@@ -7,7 +7,6 @@ import _merge from 'lodash.merge';
 import _transform from 'lodash.transform';
 import _isEqual from 'lodash.isequal';
 import _cloneDeep from 'lodash.clonedeep';
-import _omit from 'lodash.omit';
 import _deepEqual from "deep-equal";
 import {isObject} from "../validators";
 
@@ -18,7 +17,7 @@ import {isObject} from "../validators";
  * @param defaultValue
  */
 export function get(object, path, defaultValue?) {
-  return _get(object, path, defaultValue);
+    return _get(object, path, defaultValue);
 }
 
 
@@ -29,7 +28,7 @@ export function get(object, path, defaultValue?) {
  * @returns {any}
  */
 export function has(object, path) {
-  return _has(object, path);
+    return _has(object, path);
 }
 
 
@@ -39,7 +38,7 @@ export function has(object, path) {
  * @param iteratee
  */
 export function mapValues(collection, iteratee?) {
-  return _mapValues(collection, iteratee);
+    return _mapValues(collection, iteratee);
 }
 
 /**
@@ -48,7 +47,7 @@ export function mapValues(collection, iteratee?) {
  * @param iteratee
  */
 export function mapKeys(collection, iteratee?) {
-  return _mapKeys(collection, iteratee);
+    return _mapKeys(collection, iteratee);
 }
 
 /**
@@ -56,7 +55,7 @@ export function mapKeys(collection, iteratee?) {
  * @param object
  */
 export function values(object) {
-  return _values(object);
+    return _values(object);
 }
 
 /**
@@ -66,7 +65,7 @@ export function values(object) {
  * @returns {any}
  */
 export function merge(des, ...src) {
-  return _merge(des, ...src);
+    return _merge(des, ...src);
 }
 
 /**
@@ -76,7 +75,7 @@ export function merge(des, ...src) {
  * @returns {any[]}
  */
 export function diff(object, base) {
-  return changes(object, base);
+    return changes(object, base);
 }
 
 
@@ -87,37 +86,85 @@ export function diff(object, base) {
  * @returns {any[]}
  */
 function changes(object, base) {
-  return _transform(object, (result, value, key) => {
-    if (!_isEqual(value, base[key])) {
-      result[key] = isObject(value) && isObject(base[key]) ? changes(value, base[key]) : value;
-    }
-  });
+    return _transform(object, (result, value, key) => {
+        if (!_isEqual(value, base[key])) {
+            result[key] = isObject(value) && isObject(base[key]) ? changes(value, base[key]) : value;
+        }
+    });
 }
 
 /**
- * @param {any} objects 
- * @returns 
+ * @param {any} objects
+ * @returns
  */
 export function cloneDeep(objects) {
-  return _cloneDeep(objects);
+    return _cloneDeep(objects);
 }
 
 /**
- * @param {Object} object
- * @param {string | string[]} paths
+ * Remove object's property/ies
+ * @param {Object} object - The object to remove from
+ * @param {string | string[]} paths - The path/s for the properties to delete
  * @returns {Object}
  */
-export function omit(object: Object, paths: string | string[]): Object {
-  return _omit(object, paths);
+export function omit(object: Object, paths: string | string[]) {
+    if (!object) {
+        throw 'No object given';
+    }
+    if (typeof object !== 'object') {
+        throw `Expected an object but got ${typeof object} instead`;
+    }
+    const pathIsArray = Array.isArray(paths);
+    paths = pathIsArray
+        ? (paths as string[]).filter((path) => path)
+        : paths;
+    if (!paths || (pathIsArray && !paths.length)) {
+        throw 'No path was given';
+    }
+    const invalidType = pathIsArray
+        ? (paths as any[]).some((key) => typeof key !== 'string')
+        : typeof paths !== 'string';
+    if (invalidType) {
+        throw 'Expected a string / string array but got something else';
+    }
+
+    const newObj = {...object};
+    if (pathIsArray) {
+        return (paths as string[]).reduce((acc, key) => {
+            return omitPath(acc, key);
+        }, newObj);
+    }
+    return omitPath(newObj, paths as string);
 }
 
 /**
- * Returns whether the object are equal 
+ * Remove a key from an object by a given path
+ * @param {Object} obj - The original object
+ * @param {string} path - The key's path
+ * @returns {{}} The object with the given key removed
+ */
+function omitPath(obj: Object, path: string) {
+    let newObj = {...obj};
+    const [key, ...nested] = path.split(".");
+    if (obj.hasOwnProperty(key)) {
+        if (!nested.length) {
+            const {[key]: deletedKey, ...others} = newObj;
+            return others;
+        }
+        newObj[key] = omitPath(newObj[key], nested.join("."));
+    } else {
+        console.warn(`${key} doesn't exists in given object`);
+    }
+    return newObj;
+}
+
+/**
+ * Returns whether the object are equal
  * @param {Object} objectA
  * @param {Object} objectB
  * @param opts
  * @returns {boolean}
  */
 export function deepEqual(objectA: Object, objectB: Object, opts: any = {}): boolean {
-  return _deepEqual(objectA, objectB, opts);
+    return _deepEqual(objectA, objectB, opts);
 }
