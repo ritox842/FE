@@ -60,3 +60,15 @@ export function camelCase(str): string {
 export function kebabCase(str): string {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase();
 }
+
+/**
+ * Create a GUID
+ * @returns {string} - The GUID
+ */
+export function createGUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = Math.random() * 16 | 0, v = c == 'x' ? r : ( r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+
+}

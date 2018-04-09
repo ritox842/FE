@@ -62,6 +62,7 @@ https://datorama.github.io/FE/utils
 - capitalize
 - camelCase
 - kebabCase
+- createGUID
 
 #### Validators
 - isFunction
