@@ -10,6 +10,7 @@ https://datorama.github.io/FE/utils
 - last
 - uniq
 - drop
+- dropIndex
 
 #### Coercion
 - toBoolean
