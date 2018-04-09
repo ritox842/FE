@@ -17,9 +17,14 @@
   text-align: right;
 }
 
-/// Make the text CAPITALIZE
+/// Make the text Capitalize
 .capitalize {
   text-transform: capitalize;
+}
+
+/// Make the text UPPERCASE
+.uppercase {
+  text-transform: uppercase;
 }
 
 /// Make the text with no wrap
