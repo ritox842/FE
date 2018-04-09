@@ -7,6 +7,7 @@ import _merge from 'lodash.merge';
 import _transform from 'lodash.transform';
 import _isEqual from 'lodash.isequal';
 import _cloneDeep from 'lodash.clonedeep';
+import _omitBy from 'lodash.omitby';
 import _deepEqual from "deep-equal";
 import {isObject} from "../validators";
 
@@ -154,6 +155,15 @@ function omitPath(obj: Object, path: string) {
         console.warn(`${key} doesn't exists in given object`);
     }
     return newObj;
+}
+
+/**
+ * @param {Object} object
+ * @param predicate
+ * @returns {Object}
+ */
+export function omitBy(object: Object, predicate): Object {
+    return _omitBy(object, predicate);
 }
 
 /**
