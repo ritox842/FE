@@ -4,6 +4,8 @@ utils/node_modules
 utils/.vscode
 utils/.idea
 utils/dist
+utils/yarn-error.log
+utils/npm-debug.log
 
 utils/docs
 

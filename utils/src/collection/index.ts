@@ -6,9 +6,18 @@ import _keyBy from 'lodash.keyby';
 import _reject from 'lodash.reject';
 import _groupBy from 'lodash.groupby';
 import _filter from 'lodash.filter';
+import _findKey from 'lodash.findkey';
 import { toBoolean } from '../coercion';
 import {isObject} from '../validators';
 
+/**
+ *
+ * @param collection
+ * @param predicate
+ */
+export function findKey(collection, predicate) {
+  return _findKey(collection, predicate);
+}
 /**
  *
  * @param collection
