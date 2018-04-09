@@ -1,6 +1,6 @@
 {
   "name": "@datorama/utils",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "Datorama utils",
   "main": "dist/index.js",
   "module": "dist/index.js",
