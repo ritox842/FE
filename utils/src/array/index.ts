@@ -3,7 +3,6 @@ import _union from 'lodash.union';
 import _difference from 'lodash.difference';
 import _findIndex from 'lodash.findindex';
 import _minBy from 'lodash.minby';
-import _drop from 'lodash.drop';
 
 /**
  *
@@ -77,5 +76,5 @@ export function uniq<T>(array: T[]): T[] {
  * @param {number} n
  */
 export function drop(array, n = 1) {
-    return _drop(array, n);
+    return array.filter((e, index) => index >= n);
 }

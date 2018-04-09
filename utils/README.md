@@ -9,6 +9,7 @@ https://datorama.github.io/FE/utils
 - minBy
 - last
 - uniq
+- drop
 
 #### Coercion
 - toBoolean
@@ -51,6 +52,7 @@ https://datorama.github.io/FE/utils
 - diff
 - cloneDeep
 - omit
+- omitBy
 - deepEqual
 
 #### String
