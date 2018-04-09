@@ -21,10 +21,10 @@ export function findKey(collection, predicate) {
 /**
  *
  * @param collection
- * @param iteratees
+ * @param iterate
  */
-export function sortBy(collection, iteratees?) {
-  return _sortby(collection, iteratees);
+export function sortBy(collection, iterate?) {
+  return _sortby(collection, iterate);
 }
 
 /**
@@ -40,28 +40,28 @@ export function find(collection, predicate?, fromIndex?) {
 /**
  *
  * @param collection
- * @param iteratee
+ * @param iterate
  */
-export function forEach(collection, iteratee?) {
-  return _forEach(collection, iteratee);
+export function forEach(collection, iterate?) {
+  return _forEach(collection, iterate);
 }
 
 /**
  *
  * @param collection
- * @param iteratee
+ * @param iterate
  */
-export function map(collection, iteratee?) {
-  return _map(collection, iteratee);
+export function map(collection, iterate?) {
+  return _map(collection, iterate);
 }
 
 /**
  *
  * @param collection
- * @param iteratee
+ * @param iterate
  */
-export function keyBy(collection, iteratee?) {
-  return _keyBy(collection, iteratee);
+export function keyBy(collection, iterate?) {
+  return _keyBy(collection, iterate);
 }
 
 /**
@@ -78,10 +78,10 @@ export function reject(collection, predicate?) {
 /**
  *
  * @param collection
- * @param iteratee
+ * @param iterate
  */
-export function groupBy(collection, iteratee?) {
-  return _groupBy(collection, iteratee);
+export function groupBy(collection, iterate?) {
+  return _groupBy(collection, iterate);
 }
 
 /**

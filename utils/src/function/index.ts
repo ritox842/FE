@@ -10,7 +10,7 @@ import _partial from "lodash.partial";
  * @param options
  */
 export function throttle(func, wait?, options?) {
-    return _throttle(func, wait, options)
+    return _throttle(func, wait, options);
 }
 
 /**
@@ -20,7 +20,7 @@ export function throttle(func, wait?, options?) {
  * @param options
  */
 export function debounce(func, wait?, options?) {
-    return _debounce(func, wait, options)
+    return _debounce(func, wait, options);
 }
 
 /**
@@ -29,7 +29,7 @@ export function debounce(func, wait?, options?) {
  * @param {number} arity
  */
 export function curry(func, arity = func.length) {
-    return _curry(func, arity)
+    return _curry(func, arity);
 }
 
 /**
