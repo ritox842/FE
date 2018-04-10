@@ -72,9 +72,11 @@ export function uniq<T>(array: T[]): T[] {
 }
 
 /**
- * @param array
- * @param {number} n
+ * Remove the first n (passed param) items in the given array
+ * @param {T[]} array - The array to drop from
+ * @param {number} n - number of items to remove defaults to 1
+ * @returns {T[]}
  */
-export function drop(array, n = 1) {
+export function drop<T>(array: T[], n = 1): T[] {
     return array.filter((e, index) => index >= n);
 }
