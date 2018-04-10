@@ -80,13 +80,3 @@ export function uniq<T>(array: T[]): T[] {
 export function drop<T>(array: T[], n = 1): T[] {
     return array.filter((e, index) => index >= n);
 }
-
-/**
- * Remove the item in a given index from array
- * @param {T[]} array - The array to drop from
- * @param removeIndex - The target item index
- * @returns {T[]}
- */
-export function dropIndex<T>(array: T[], removeIndex): T[] {
-    return array.slice().splice(removeIndex, 1);
-}
