@@ -1,20 +1,15 @@
-import { TestBed } from '@angular/core/testing';
-import { {{pascalCase name}}Service} from "./{{dashCase name}}.service";
+import { createService } from "@netbasal/spectator";
+import { {{pascalCase name}}Service } from "./{{dashCase name}}.service";
+import { {{pascalCase name}}DataService } from "./{{dashCase name}}-data.service";
 
 describe('{{pascalCase name}}Service', () => {
-  let {{camelCase name}}Service : {{pascalCase name}}Service;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: []
+    const spectator = createService({
+      service: {{pascalCase name}}Service,
+      mocks: [{{pascalCase name}}DataService]
     });
 
-    {{camelCase name}}Service = TestBed.get({{pascalCase name}}Service);
-  });
+    it('should...', () => {
 
-
-  it('should...', () => {
-    expect({{camelCase name}}Service).toEqual('Datorama');
-  });
+    });
 
 });

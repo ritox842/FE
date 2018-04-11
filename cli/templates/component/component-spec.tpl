@@ -1,30 +1,16 @@
-import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 import { {{pascalCase name}}Component } from "./{{dashCase name}}.component";
+import { createHostComponentFactory, SpectatorWithHost } from "@netbasal/spectator";
 
-describe('{{pascalCase name}}Component', () => {
+describe("{{pascalCase name}}Component", () => {
 
-  let component: {{pascalCase name}}Component;
-  let fixture: ComponentFixture<{{pascalCase name}}Component>;
-
-  beforeEach(async () => {
-    const module = extendDefaultModule(
-      {
-        imports: [],
-        providers: [],
-        declarations: [{{pascalCase name}}Component]
-      });
-
-    TestBed.configureTestingModule(module).compileComponents();
+  let host: SpectatorWithHost<{{pascalCase name}}Component>;
+  const createHost = createHostComponentFactory({
+    component: {{pascalCase name}}Component
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent({{pascalCase name}}Component);
-    component = fixture.componentInstance;
+  it("should be defined", () => {
+    host = createHost(`<da-{{dashCase name}}></da-{{dashCase name}}>`);
+    expect(host.component).toBeDefined();
   });
-
-  it('should be defined', () => {
-    expect(component).toBeDefined();
-  });
-
 
 });
