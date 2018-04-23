@@ -4,7 +4,7 @@
 /// @group Flex
 ////
 
-/// display flex
+///
 .d-flex {
   display: flex;
 }
@@ -14,9 +14,8 @@
   display: inline-flex;
 }
 
-///
+/// @deprecated Use d-flex
 .d-flex-row {
-  flex-direction: row;
   display: flex;
 }
 
@@ -209,20 +208,38 @@
   align-items: center;
 }
 
+///
+.align-center-end {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+///
+.align-center-start {
+  justify-content: center;
+  align-items: flex-start;
+}
+
 /// align to center
 .align-center,
 .align-center-center {
   place-content: center;
   align-items: center;
 }
+
+///
 .align-end-center {
   place-content: center flex-end;
   align-items: center;
 }
+
+///
 .align-space-between-center {
   justify-content: space-between;
   align-items: center;
 }
+
+///
 .align-space-around-center {
   justify-content: space-around;
   align-items: center;
