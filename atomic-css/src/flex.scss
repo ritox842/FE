@@ -5,14 +5,13 @@
 ////
 
 ///
-.d-inline-flex {
-  display: inline-flex;
+.d-flex {
+  display: flex;
 }
 
 ///
-.d-flex-row {
-  flex-direction: row;
-  display: flex;
+.d-inline-flex {
+  display: inline-flex;
 }
 
 ///
@@ -204,13 +203,15 @@
   align-items: center;
 }
 
+///
 .align-center-end {
-  place-content: center;
+  justify-content: center;
   align-items: flex-end;
 }
 
+///
 .align-center-start {
-  place-content: center;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -221,16 +222,19 @@
   align-items: center;
 }
 
+///
 .align-end-center {
   place-content: center flex-end;
   align-items: center;
 }
 
+///
 .align-space-between-center {
   justify-content: space-between;
   align-items: center;
 }
 
+///
 .align-space-around-center {
   justify-content: space-around;
   align-items: center;
