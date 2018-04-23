@@ -14,6 +14,11 @@
   display: inline-flex;
 }
 
+/// @deprecated Use d-flex
+.d-flex-row {
+  display: flex;
+}
+
 ///
 .d-flex-row-rev {
   flex-direction: row-reverse;
