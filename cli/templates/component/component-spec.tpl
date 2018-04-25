@@ -9,7 +9,11 @@ describe("{{pascalCase name}}Component", () => {
   });
 
   it("should be defined", () => {
+    {{#if platform}}
     host = createHost(`<da-{{dashCase name}}></da-{{dashCase name}}>`);
+   {{else}}
+    host = createHost(`<dato-{{dashCase name}}></dato-{{dashCase name}}>`);
+   {{/if}}
     expect(host.component).toBeDefined();
   });
 
