@@ -7,7 +7,7 @@ $maxHeightStep: 5;
 $steps: floor(100 / $maxHeightStep);
 
 @mixin max-height-x {
-  @for $i from 1 through $steps {
+  @for $i from 0 through $steps {
     .max-height-#{$maxHeightStep * $i} {
       max-height: #{$maxHeightStep * $i * 1%}
     }

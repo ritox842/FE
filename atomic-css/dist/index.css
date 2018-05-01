@@ -407,9 +407,6 @@
 .max-height-100 {
   max-height: 100%; }
 
-.width-100 {
-  max-width: 100%; }
-
 .max-width-5 {
   max-width: 5%; }
 
@@ -472,9 +469,6 @@
 
 .min-width-auto {
   min-width: auto; }
-
-.min-width-0 {
-  min-width: 0; }
 
 .min-width-5 {
   min-width: 5%; }

@@ -12,7 +12,7 @@ $minWidthStep: 5;
 $steps: floor(100 / $minWidthStep);
 
 @mixin min-width-x {
-  @for $i from 1 through $steps {
+  @for $i from 0 through $steps {
     .min-width-#{$minWidthStep * $i} {
       min-width: #{$minWidthStep * $i * 1%}
     }
