@@ -1,0 +1,17 @@
+////
+/// @group Width
+////
+
+$widthStep: 25;
+
+$steps: floor(100 / $widthStep);
+
+@mixin width-x {
+  @for $i from 1 through $steps {
+    .width-#{$widthStep * $i} {
+      width: #{$widthStep * $i * 1%}
+    }
+  }
+}
+
+@include width-x;
