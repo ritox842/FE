@@ -48,3 +48,12 @@ export function isNumber(value) {
 export function isEqual(valueA, valueB): boolean {
     return _isEqual(valueA, valueB);
 }
+
+/**
+ * Check if a value is of type string
+ * @param value
+ * @return {boolean}
+ */
+export function isString(value: any): boolean {
+    return typeof value === 'string';
+}

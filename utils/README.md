@@ -70,6 +70,7 @@ https://datorama.github.io/FE/utils
 - isEmpty
 - isNumber
 - isEqual
+- isString
 
 #### Enums
 - ContentType
