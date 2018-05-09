@@ -48,11 +48,7 @@ module.exports = function(plop) {
     actions: function(data) {
       data.core = !data.platform;
       
-      const actions = [{
-          type: 'add',
-          path: buildPath("{{'dashCase' name}}.theme.scss", data.directory, true),
-          templateFile: './templates/component/theme.tpl'
-        },
+      const actions = [
         {
           type: 'add',
           path: buildPath("{{'dashCase' name}}.component.scss", data.directory, true),
@@ -131,10 +127,15 @@ module.exports = function(plop) {
 
       if (!data.platform) {
         actions.push({
+            type: 'add',
+            path: buildPath("{{'dashCase' name}}.theme.scss", data.directory, true),
+            templateFile: './templates/component/theme.tpl'
+        });
+        actions.push({
           type: 'add',
           path: buildPath("public_api.ts", data.directory, true),
           templateFile: './templates/component/public_api.tpl'
-        })
+        });
       } else {
         actions.push({
           type: 'add',
