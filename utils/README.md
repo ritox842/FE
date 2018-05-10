@@ -75,3 +75,6 @@ https://datorama.github.io/FE/utils
 #### Enums
 - ContentType
 - KeyCodes
+
+#### Sort Comparators
+- dateCompare
