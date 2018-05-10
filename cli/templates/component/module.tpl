@@ -26,7 +26,8 @@ const publicApi = [Dato{{pascalCase name}}Component];
 @NgModule({
   imports: [CommonModule],
   declarations: [publicApi],
-  exports: [publicApi]
+  exports: [publicApi],
+  entryComponents: [publicApi]
 })
 {{#if platform}}
 export class {{pascalCase name}}Module {
