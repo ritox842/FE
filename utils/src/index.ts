@@ -8,3 +8,4 @@ export * from './object';
 export * from './string';
 export * from './types';
 export * from './validators';
+export * from './sort-comparators';
