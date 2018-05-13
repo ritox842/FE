@@ -25,5 +25,5 @@ export function dateCompare(valA, valB, invert?) {
 
     result = result || dateA.diff(dateB);
 
-    return result !== 0 ? result * (invert ? -1 : 1) : 0;
+    return result !== 0 ? result * (invert === true ? -1 : 1) : 0;
 }
