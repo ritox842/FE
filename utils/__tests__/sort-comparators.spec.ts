@@ -1,5 +1,6 @@
-import {dateCompare} from "../src/sort-comparators";
+import {dateCompare, stringCompare} from "../src/sort-comparators";
 import * as moment from "moment";
+
 
 describe('Sort Comparators', () => {
 
@@ -78,4 +79,64 @@ describe('Sort Comparators', () => {
 
     });
 
+    describe('stringCompare', () => {
+
+        describe('strings sort', () => {
+            it('should return positive value', () => {
+                expect(stringCompare('Author', 'Burns')).toBeGreaterThan(0);
+            });
+
+            it('should return negative value', () => {
+                expect(stringCompare('Author', 'Burns', false, true)).toBeLessThan(0);
+            });
+
+            it('should return 0', () => {
+                expect(stringCompare('Author', 'Author')).toEqual(0);
+            });
+        });
+
+        describe('strings sort case sensitive', () => {
+            it('should return positive value', () => {
+                expect(stringCompare('author', 'Burns')).toBeGreaterThan(0);
+            });
+
+            it('should return negative value', () => {
+                expect(stringCompare('Author', 'burns', false)).toBeLessThan(0);
+            });
+
+            it('should return 0', () => {
+                expect(stringCompare('Author', 'Author')).toEqual(0);
+            });
+        });
+
+        describe('Inverted sort', () => {
+            it('should return negative value', () => {
+                expect(stringCompare('Author', 'Burns', true, true)).toBeLessThan(0);
+            });
+
+            it('should return positive value', () => {
+                expect(stringCompare('Author', 'Burns', true, false)).toBeGreaterThan(0);
+            });
+        });
+
+        describe('array of objects sorting by key', () => {
+            let writers;
+            const ascResult = JSON.stringify([{name: 'Alfred'}, {name: 'Stephen'}]);
+            beforeEach(() => {
+                writers = [{name: 'Stephen'}, {name: 'Alfred'}];
+            });
+
+            it('should sort array of objects asc by name property', function () {
+                writers.sort( (valA, valB) => stringCompare(valA, valB, true, false, 'name'));
+                expect(JSON.stringify(writers)).toEqual(ascResult);
+            });
+
+            it('should sort array of objects desc by name property', function () {
+                writers.sort( (valA, valB) => stringCompare(valA, valB, true, true, 'name'));
+                expect(JSON.stringify(writers)).toEqual(ascResult);
+            });
+        });
+
+    });
 });
+
