@@ -9,6 +9,7 @@ https://datorama.github.io/FE/utils
 - minBy
 - last
 - uniq
+- uniqBy
 - drop
 
 #### Coercion

@@ -3,6 +3,7 @@ import _union from 'lodash.union';
 import _difference from 'lodash.difference';
 import _findIndex from 'lodash.findindex';
 import _minBy from 'lodash.minby';
+import _uniqBy from 'lodash.uniqby';
 
 /**
  *
@@ -45,10 +46,10 @@ export function findIndex(array, predicate?, fromIndex?) {
 /**
  *
  * @param array
- * @param iteratee
+ * @param iterator
  */
-export function minBy(array, iteratee) {
-  return _minBy(array, iteratee);
+export function minBy(array, iterator) {
+  return _minBy(array, iterator);
 }
 
 /**
@@ -69,6 +70,15 @@ export function last<T>(arr: T[]): T {
  */
 export function uniq<T>(array: T[]): T[] {
     return Array.from(new Set(array));
+}
+
+/**
+ *
+ * @param array
+ * @param iterator
+ */
+export function uniqBy(array, iterator) {
+    return _uniqBy(array, iterator);
 }
 
 /**
