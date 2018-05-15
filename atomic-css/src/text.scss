@@ -31,3 +31,12 @@
 .nowrap {
   white-space: nowrap;
 }
+
+/// Add ellipsis to overflow text
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  display: block;
+}
