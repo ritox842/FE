@@ -1,8 +1,8 @@
-export const enum ContentType {
+export enum ContentType {
   JSON = "application/json"
 }
 
-export const enum KeyCodes {
+export enum KeyCodes {
   BACKSPACE = 8,
   TAB = 9,
   ENTER = 13,
