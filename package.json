@@ -3,7 +3,7 @@
   "license": "MIT",
   "scripts": {},
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^1.2.0"
   },
   "dependencies": {
     "save": "^2.3.2"

@@ -1,5 +1,5 @@
 node_modules
-
+.vscode
 utils/node_modules
 utils/.vscode
 utils/.idea
