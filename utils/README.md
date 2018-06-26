@@ -77,5 +77,10 @@ https://datorama.github.io/FE/utils
 - ContentType
 - KeyCodes
 
+
+#### Regex
+- validUrl
+
 #### Sort Comparators
 - dateCompare
+
