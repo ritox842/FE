@@ -36,6 +36,9 @@
 .invisible {
   visibility: hidden; }
 
+.force-hide {
+  display: none !important; }
+
 /*
   Use to generate flex props
  */
