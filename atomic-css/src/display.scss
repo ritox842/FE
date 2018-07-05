@@ -51,3 +51,8 @@
 .invisible {
   visibility: hidden;
 }
+
+///
+.force-hide {
+  display: none !important;
+}
