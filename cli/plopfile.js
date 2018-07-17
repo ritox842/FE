@@ -142,11 +142,6 @@ module.exports = function(plop) {
           path: buildPath("./{{'dashCase' name}}.mocks.ts", data.directory, true),
           templateFile: './templates/component/mocks.tpl'
         });
-        actions.push({
-          type: 'add',
-          path: buildPath("./index.ts", data.directory, true),
-          templateFile: './templates/component/index.tpl'
-        });
       }
 
 
