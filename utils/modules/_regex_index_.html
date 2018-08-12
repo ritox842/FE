@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;sort-comparators/index&quot; | @datorama/utils</title>
+	<title>&quot;regex/index&quot; | @datorama/utils</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_sort_comparators_index_.html">&quot;sort-comparators/index&quot;</a>
+					<a href="_regex_index_.html">&quot;regex/index&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;sort-comparators/index&quot;</h1>
+			<h1>External module &quot;regex/index&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,49 +71,37 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_sort_comparators_index_.html#datecompare" class="tsd-kind-icon">date<wbr>Compare</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_regex_index_.html#validurl" class="tsd-kind-icon">valid<wbr>Url</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="datecompare" class="tsd-anchor"></a>
-					<h3>date<wbr>Compare</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">date<wbr>Compare<span class="tsd-signature-symbol">(</span>valA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, valB<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, invert<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/datorama/FE/blob/aa4a3ca/utils/src/sort-comparators/index.ts#L11">sort-comparators/index.ts:11</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Compare 2 date values</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>valA: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>valB: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> invert: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="validurl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> valid<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">valid<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> =&nbsp;new RegExp(&quot;^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|www\\.){1}([0-9A-Za-z-\\.@:%_\+~#&#x3D;]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/datorama/FE/blob/aa4a3ca/utils/src/regex/index.ts#L7">regex/index.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p> Checks to see if a given string is a valid url.
+								Accepts http:// or https://.
+							May start also with www (Not mandatory).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{RegExp}</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -147,10 +135,10 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_object_index_.html">"object/index"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_regex_index_.html">"regex/index"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_sort_comparators_index_.html">"sort-<wbr>comparators/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -166,8 +154,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_sort_comparators_index_.html#datecompare" class="tsd-kind-icon">date<wbr>Compare</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_regex_index_.html#validurl" class="tsd-kind-icon">valid<wbr>Url</a>
 					</li>
 				</ul>
 			</nav>
