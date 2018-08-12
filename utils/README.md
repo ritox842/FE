@@ -5,6 +5,7 @@ https://datorama.github.io/FE/utils
 - intersection
 - union
 - difference
+- differenceBy
 - findIndex
 - minBy
 - last

@@ -1,6 +1,7 @@
 import _intersection from 'lodash.intersection';
 import _union from 'lodash.union';
 import _difference from 'lodash.difference';
+import _differenceBy from 'lodash.differenceBy';
 import _findIndex from 'lodash.findindex';
 import _minBy from 'lodash.minby';
 import _uniqBy from 'lodash.uniqby';
@@ -27,6 +28,14 @@ export function union(...arrays) {
  */
 export function difference(...arrays) {
   return _difference(...arrays);
+}
+
+/**
+ *
+ * @param arrays
+ */
+export function differenceBy(...arrays) {
+    return _differenceBy(...arrays);
 }
 
 /**
