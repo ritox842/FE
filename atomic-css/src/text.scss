@@ -17,15 +17,29 @@
   text-align: right;
 }
 
-/// Make the text Capitalize
+/// Make each word of the text Capitalize
 .capitalize {
   text-transform: capitalize;
+}
+
+/// Make the first word of the text Capitalize
+.capitalize-first {
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: capitalize;
+  }
 }
 
 /// Make the text UPPERCASE
 .uppercase {
   text-transform: uppercase;
 }
+
+/// Make the text UPPERCASE
+.lowercase {
+  text-transform: lowercase;
+}
+
 
 /// Make the text with no wrap
 .nowrap {

@@ -661,8 +661,16 @@
 .capitalize {
   text-transform: capitalize; }
 
+.capitalize-first {
+  text-transform: lowercase; }
+  .capitalize-first::first-letter {
+    text-transform: capitalize; }
+
 .uppercase {
   text-transform: uppercase; }
+
+.lowercase {
+  text-transform: lowercase; }
 
 .nowrap {
   white-space: nowrap; }
@@ -2198,3 +2206,9 @@
 
 .pointer {
   cursor: pointer; }
+
+.fill-current-color {
+  fill: currentColor; }
+
+.stroke-current-color {
+  stroke: currentColor; }
