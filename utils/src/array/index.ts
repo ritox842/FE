@@ -99,3 +99,7 @@ export function uniqBy(array, iterator) {
 export function drop<T>(array: T[], n = 1): T[] {
     return array.filter((e, index) => index >= n);
 }
+
+export function a<T>(array: T[], n = 1): T[] {
+    return array.filter((e, index) => index >= n);
+}
