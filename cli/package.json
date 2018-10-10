@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "inquirer-directory": "^2.1.0",
-    "npm-run": "^4.1.2",
-    "pkg-dir": "^2.0.0",
-    "plop": "1.9.1",
-    "shelljs": "^0.7.8"
+    "npm-run": "^5.0.1",
+    "pkg-dir": "^3.0.0",
+    "plop": "2.1.0",
+    "shelljs": "^0.8.2"
   }
 }
